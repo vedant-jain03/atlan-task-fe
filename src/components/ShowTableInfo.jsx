@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TableChartIcon from '@mui/icons-material/TableChart';
 import customerData from '../assets/data/customer.json'
 import productData from '../assets/data/product.json'
 import shopData from '../assets/data/shop.json'
 
-function ShowTableInfo({ setQuery }) {
+function ShowTableInfo({ setQuery, fullScreen }) {
   const [hideBar, setHideBar] = useState(false);
 
   const tableMeta = [
@@ -24,6 +24,9 @@ function ShowTableInfo({ setQuery }) {
   const toggleBar = () => {
     setHideBar(!hideBar)
   }
+  useEffect(() => {
+    setHideBar(fullScreen);
+  }, [fullScreen])
   return (
     <div className={`pb-4 relative ${hideBar ? 'w-[10px] p-4' : 'w-[300px]'}`}>
       <button className={`absolute p-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-[5px] border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-[25px] h-[25px] flex justify-center items-center left-[-12px] top-[12px] outline-none`}

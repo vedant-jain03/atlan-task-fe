@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function ShowOutput({ isOutputLoad, setOutputLoad, outputData, setOutputData, handleSubmit, setShowOutputTerminal, showOutputTerminal }) {
+function ShowOutput({ isOutputLoad, setOutputLoad, outputData, setOutputData, handleSubmit, setShowOutputTerminal, showOutputTerminal, fullScreen }) {
+  useEffect(() => {
+    setShowOutputTerminal(!fullScreen);
+  }, [fullScreen])
   return (
     <div>
       <div className='px-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between cursor-pointer' onClick={() => setShowOutputTerminal(!showOutputTerminal)}><span className=''>Output </span>{outputData && <span className='text-sm text-[gray]'>1000 rows in (0.03)s</span>}</div>
