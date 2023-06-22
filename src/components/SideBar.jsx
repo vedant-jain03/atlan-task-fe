@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 function SideBar({ history, setQuery }) {
   const [hideBar, setHideBar] = useState(false);
@@ -14,9 +15,10 @@ function SideBar({ history, setQuery }) {
         <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'><span className=''>History</span></div>
         <div className='overflow-y-scroll h-[90vh]'>
           {
-            history && history.map((item) => (<div class="bg-[#343541] h-[77px] clamp-3 m-2 p-2 rounded-[5px] overflow-hidden text-sm cursor-pointer" onClick={() => setQuery(item)}>
-              <p class="line-clamp-3">
-                {item}
+            history && history.map((item) => (
+            <div class="bg-[#343541] clamp-1 m-2 p-2 rounded-[5px] overflow-hidden text-sm cursor-pointer flex items-center" onClick={() => setQuery(item)}>
+              <p class="line-clamp-1 text-sm">
+                <ArrowOutwardIcon style={{fontSize: '16px'}} /> {item}
               </p>
             </div>))
           }
