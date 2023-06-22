@@ -1,10 +1,10 @@
-import React, { Suspense, lazy, useCallback, useEffect, useState } from 'react'
+import React, { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react'
 import ShowEditor from '../components/ShowEditor'
 import ShowOutput from '../components/ShowOutput'
 import ShowTableInfo from '../components/ShowTableInfo'
 import EditorNavbar from '../components/EditorNavbar'
+import SideBar from '../components/SideBar'
 
-const SideBar = lazy(() => import('../components/SideBar'))
 function Editor() {
   const [isOutputLoad, setOutputLoad] = useState(false);
   const [outputData, setOutputData] = useState();
@@ -20,7 +20,7 @@ function Editor() {
     setShowOutputTerminal(true)
     setOutputLoad(true);
     // hard coded query
-    if(query.toLowerCase() === "select * from customer;") {
+    if (query.toLowerCase() === "select * from customer;") {
       var { default: data } = await import('../assets/data/customer.json');
     } else if (query.toLowerCase() === "select * from product;") {
       var { default: data } = await import('../assets/data/product.json');
@@ -32,11 +32,11 @@ function Editor() {
     setOutputData(data);
     setOutputLoad(false);
     setHistory([...history, query]);
-    localStorage.setItem('history', JSON.stringify({items: [...history, query]}));
-  }, [query])
+    localStorage.setItem('history', JSON.stringify({ items: [...history, query] }));
+  }, [])
 
   // file importer handler
-  const handleFileImport = (e) => {
+  const handleFileImport = useCallback((e) => {
     const file = e.target.files[0];
 
     if (file) {
@@ -49,22 +49,11 @@ function Editor() {
 
       reader.readAsText(file);
     }
+  }, [])
 
-  }
-
-  // handle clear history
-  const clearHistory = () => {
-    const userConfirmation = window.confirm('Are you sure, want to delete the history?')
-    if(userConfirmation) {
-      setHistory('');
-      localStorage.removeItem('history')
-    }
-  }
   return (
     <div className='flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <SideBar hideSideBar={hideSideBar} setHideSideBar={setHideSideBar} setHistory={setHistory} history={history} setQuery={setQuery} clearHistory={clearHistory} fullScreen={fullScreen} />
-      </Suspense>
+        <SideBar hideSideBar={hideSideBar} setHideSideBar={setHideSideBar} setQuery={setQuery} fullScreen={fullScreen} />
       <div className='w-[100%] border-x-[1px] border-[#ffffff33]'>
         <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} query={query} setFullScreen={setFullScreen} fullScreen={fullScreen} />
         <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />

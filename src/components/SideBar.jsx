@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-function SideBar({ hideSideBar, setHideSideBar, setHistory, history, setQuery, clearHistory, fullScreen }) {
+function SideBar({ hideSideBar, setHideSideBar, setQuery, fullScreen }) {
+  const [history, setHistory] = useState([]);
   const toggleBar = () => {
     setHideSideBar(!hideSideBar)
   }
+  // handle clear history
+  const clearHistory = useCallback(() => {
+    const userConfirmation = window.confirm('Are you sure, want to delete the history?')
+    if (userConfirmation) {
+      setHistory('');
+      localStorage.removeItem('history')
+    }
+  }, [])
+
   useEffect(() => {
     setHideSideBar(fullScreen);
   }, [fullScreen])
+
   useEffect(() => {
     if (localStorage.getItem('history')) {
       setHistory(JSON.parse(localStorage.getItem('history')).items)
