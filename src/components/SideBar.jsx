@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-function SideBar({ hideSideBar, setHideSideBar, setQuery, fullScreen }) {
-  const [history, setHistory] = useState([]);
+function SideBar({ history, setHistory, hideSideBar, setHideSideBar, setQuery, fullScreen }) {
   const toggleBar = () => {
     setHideSideBar(!hideSideBar)
   }
