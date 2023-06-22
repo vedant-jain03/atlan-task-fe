@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import SideBar from '../components/SideBar'
+import React, { Suspense, lazy, useCallback, useEffect, useState } from 'react'
 import ShowEditor from '../components/ShowEditor'
 import ShowOutput from '../components/ShowOutput'
 import ShowTableInfo from '../components/ShowTableInfo'
 import EditorNavbar from '../components/EditorNavbar'
 
+const SideBar = lazy(() => import('../components/SideBar'))
 function Editor() {
   const [isOutputLoad, setOutputLoad] = useState(false);
   const [outputData, setOutputData] = useState();
@@ -22,8 +22,8 @@ function Editor() {
       var { default: data } = await import('../assets/data/customer.json');
     } else if (query.toLowerCase() === "select * from product;") {
       var { default: data } = await import('../assets/data/product.json');
-    } else if (query.toLowerCase() === "select * from shop;") {
-      var { default: data } = await import('../assets/data/shop.json');
+    } else if (query.toLowerCase() === "select * from supplier;") {
+      var { default: data } = await import('../assets/data/supplier.json');
     } else {
       var { default: data } = await import('../assets/data/product.json');
     }
@@ -58,15 +58,11 @@ function Editor() {
       localStorage.removeItem('history')
     }
   }
-
-  useEffect(() => {
-    if(localStorage.getItem('history')) {
-      setHistory(JSON.parse(localStorage.getItem('history')).items)
-    }
-  }, [])
   return (
     <div className='flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
-      <SideBar history={history} setQuery={setQuery} clearHistory={clearHistory} fullScreen={fullScreen} />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <SideBar setHistory={setHistory} history={history} setQuery={setQuery} clearHistory={clearHistory} fullScreen={fullScreen} />
+      </Suspense>
       <div className='w-[100%] border-x-[1px] border-[#ffffff33]'>
         <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} query={query} setFullScreen={setFullScreen} fullScreen={fullScreen} />
         <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />

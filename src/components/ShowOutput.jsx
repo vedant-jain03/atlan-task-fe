@@ -7,7 +7,7 @@ function ShowOutput({ isOutputLoad, setOutputLoad, outputData, setOutputData, ha
   return (
     <div>
       <div className='px-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between cursor-pointer' onClick={() => setShowOutputTerminal(!showOutputTerminal)}><span className=''>Output </span>{outputData && <span className='text-sm text-[gray]'>1000 rows in (0.03)s</span>}</div>
-      <div className='h-[230px] overflow-y-scroll'>
+      <div className='h-[230px] max-w-[1020px] overflow-scroll'>
         <div className="relative overflow-x-auto">
           {
             isOutputLoad &&
