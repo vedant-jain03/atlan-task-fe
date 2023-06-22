@@ -2,15 +2,15 @@ import { sql } from '@codemirror/lang-sql';
 import ReactCodeMirror from '@uiw/react-codemirror'
 import React from 'react'
 
-function ShowEditor({setQuery, query}) {
+function ShowEditor({ setQuery, query, showOutputTerminal }) {
   const onChange = React.useCallback((value, viewUpdate) => {
     setQuery(value);
   }, []);
   return (
     <div className='w-[100%]'>
       <ReactCodeMirror
-        value="SELECT * FROM table_name;"
-        height="400px"
+        value={query}
+        height={showOutputTerminal ? "400px" : '630px'}
         extensions={[sql()]}
         onChange={onChange}
         theme={'dark'}

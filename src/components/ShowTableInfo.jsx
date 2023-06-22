@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TableChartIcon from '@mui/icons-material/TableChart';
 
-function ShowTableInfo() {
+function ShowTableInfo({ setQuery }) {
   const [hideBar, setHideBar] = useState(false);
 
   const tableMeta = [
@@ -25,10 +25,10 @@ function ShowTableInfo() {
             tableMeta.map((item) => {
               return (
                 <div>
-                  <span className='flex items-center'><TableChartIcon className='pr-1' /> {item.name} [-]</span>
+                  <span className='flex items-center cursor-pointer' onClick={()=>setQuery(`SELECT * FROM ${item.name};`)}><TableChartIcon className='pr-1' /> {item.name} [-]</span>
                   <ul>
                     {
-                      item.fields?.map((fieldItem) => (<li className='text-sm'> <span className=' border-[#ffffff9c] border-b border-l h-4 w-2 inline-block ml-4 relative top-[-3px]'></span> {fieldItem} <span className='text-[#2463eb]'>[{typeof(fieldItem)}]</span></li>))
+                      item.fields?.map((fieldItem) => (<li className='text-sm cursor-pointer'> <span className=' border-[#ffffff9c] border-b border-l h-4 w-2 inline-block ml-4 relative top-[-3px]'></span> <span onClick={() => setQuery(`SELECT ${fieldItem} FROM ${item.name};`)}>{fieldItem}</span> <span className='text-[#2463eb]'>[{typeof(fieldItem)}]</span></li>))
                     }
                   </ul>
                 </div>
