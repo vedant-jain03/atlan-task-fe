@@ -16,7 +16,16 @@ function Editor() {
   const handleSubmit = useCallback(async () => {
     setShowOutputTerminal(true)
     setOutputLoad(true);
-    const { default: data } = await import('../assets/data/product.json');
+    // hard coded query
+    if(query.toLowerCase() === "select * from customer;") {
+      var { default: data } = await import('../assets/data/customer.json');
+    } else if (query.toLowerCase() === "select * from product;") {
+      var { default: data } = await import('../assets/data/product.json');
+    } else if (query.toLowerCase() === "select * from shop;") {
+      var { default: data } = await import('../assets/data/shop.json');
+    } else {
+      var { default: data } = await import('../assets/data/product.json');
+    }
     setOutputData(data);
     setOutputLoad(false);
     setHistory([...history, query]);
@@ -42,7 +51,7 @@ function Editor() {
     <div className='flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
       <SideBar history={history} setQuery={setQuery} />
       <div className='w-[100%] border-x-[1px] border-[#ffffff33]'>
-        <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} />
+        <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} query={query} />
         <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} />
         <ShowOutput isOutputLoad={isOutputLoad} setOutputLoad={setOutputLoad} outputData={outputData} setOutputData={setOutputData} handleSubmit={handleSubmit} setShowOutputTerminal={setShowOutputTerminal} showOutputTerminal={showOutputTerminal} />
       </div>
