@@ -33,7 +33,7 @@ function Editor() {
     setOutputLoad(false);
     setHistory([...history, query]);
     localStorage.setItem('history', JSON.stringify({ items: [...history, query] }));
-  }, [])
+  }, [query])
 
   // file importer handler
   const handleFileImport = useCallback((e) => {
