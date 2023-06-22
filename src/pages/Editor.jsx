@@ -8,7 +8,7 @@ const SideBar = lazy(() => import('../components/SideBar'))
 function Editor() {
   const [isOutputLoad, setOutputLoad] = useState(false);
   const [outputData, setOutputData] = useState();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('SELECT * FROM Customer;');
   const [showOutputTerminal, setShowOutputTerminal] = useState(false);
   const [history, setHistory] = useState([])
   const [fullScreen, setFullScreen] = useState(false);
