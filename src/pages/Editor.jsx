@@ -52,8 +52,11 @@ function Editor() {
 
   // handle clear history
   const clearHistory = () => {
-    setHistory([]);
-    localStorage.removeItem('history')
+    const userConfirmation = window.confirm('Are you sure, want to delete the history?')
+    if(userConfirmation) {
+      setHistory([]);
+      localStorage.removeItem('history')
+    }
   }
 
   useEffect(() => {
