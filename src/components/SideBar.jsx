@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-function SideBar({ setHistory, history, setQuery, clearHistory, fullScreen }) {
-  const [hideBar, setHideBar] = useState(false);
+function SideBar({ hideSideBar, setHideSideBar, setHistory, history, setQuery, clearHistory, fullScreen }) {
   const toggleBar = () => {
-    setHideBar(!hideBar)
+    setHideSideBar(!hideSideBar)
   }
   useEffect(() => {
-    setHideBar(fullScreen);
+    setHideSideBar(fullScreen);
   }, [fullScreen])
   useEffect(() => {
     if (localStorage.getItem('history')) {
@@ -15,11 +14,11 @@ function SideBar({ setHistory, history, setQuery, clearHistory, fullScreen }) {
     }
   }, [])
   return (
-    <div className={`pb-4 relative ${hideBar ? 'w-[10px] p-4' : 'w-[350px]'}`}>
+    <div className={`pb-4 relative ${hideSideBar ? 'w-[10px] p-4' : 'w-[350px]'}`}>
       <button className={`absolute p-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-[5px] border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-[25px] h-[25px] flex justify-center items-center z-20 right-[-12px] top-[12px] outline-none `}
         onClick={() => toggleBar()}
-      >{hideBar ? '>' : '<'}</button>
-      <div className={`${hideBar ? 'hidden' : 'block'}`}>
+      >{hideSideBar ? '>' : '<'}</button>
+      <div className={`${hideSideBar ? 'hidden' : 'block'}`}>
         <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'><span className=''>History</span><DeleteOutlineIcon className='mr-4 cursor-pointer' onClick={()=>clearHistory()} /> </div>
         <div className='overflow-y-scroll h-[90vh]'>
           {

@@ -4,8 +4,7 @@ import customerData from '../assets/data/customer.json'
 import productData from '../assets/data/product.json'
 import supplierData from '../assets/data/supplier.json'
 
-function ShowTableInfo({ setQuery, fullScreen }) {
-  const [hideBar, setHideBar] = useState(false);
+function ShowTableInfo({ hideTableSideBar, setHideTableSideBar ,setQuery, fullScreen }) {
 
   // hard coded
   const tableMeta = [
@@ -23,17 +22,17 @@ function ShowTableInfo({ setQuery, fullScreen }) {
     }
   ]
   const toggleBar = () => {
-    setHideBar(!hideBar)
+    setHideTableSideBar(!hideTableSideBar)
   }
   useEffect(() => {
-    setHideBar(fullScreen);
+    setHideTableSideBar(fullScreen);
   }, [fullScreen])
   return (
-    <div className={`pb-4 relative ${hideBar ? 'w-[10px] p-4' : 'w-[350px]'}`}>
+    <div className={`pb-4 relative ${hideTableSideBar ? 'w-[10px] p-4' : 'w-[350px]'}`}>
       <button className={`absolute p-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-[5px] border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-[25px] h-[25px] flex justify-center items-center left-[-12px] top-[12px] outline-none`}
         onClick={() => toggleBar()}
-      >{hideBar ? '<' : '>'}</button>
-      <div className={`${hideBar ? 'hidden' : 'block'}`}>
+      >{hideTableSideBar ? '<' : '>'}</button>
+      <div className={`${hideTableSideBar ? 'hidden' : 'block'}`}>
         <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'><span className=''>Available Tables</span></div>
         <div className='p-4'>
           {

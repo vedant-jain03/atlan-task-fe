@@ -12,6 +12,8 @@ function Editor() {
   const [showOutputTerminal, setShowOutputTerminal] = useState(false);
   const [history, setHistory] = useState([])
   const [fullScreen, setFullScreen] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(false);
+  const [hideTableSideBar, setHideTableSideBar] = useState(false);
 
   // query executer handler
   const handleSubmit = useCallback(async () => {
@@ -54,21 +56,21 @@ function Editor() {
   const clearHistory = () => {
     const userConfirmation = window.confirm('Are you sure, want to delete the history?')
     if(userConfirmation) {
-      setHistory([]);
+      setHistory('');
       localStorage.removeItem('history')
     }
   }
   return (
     <div className='flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
       <Suspense fallback={<h1>Loading...</h1>}>
-        <SideBar setHistory={setHistory} history={history} setQuery={setQuery} clearHistory={clearHistory} fullScreen={fullScreen} />
+        <SideBar hideSideBar={hideSideBar} setHideSideBar={setHideSideBar} setHistory={setHistory} history={history} setQuery={setQuery} clearHistory={clearHistory} fullScreen={fullScreen} />
       </Suspense>
       <div className='w-[100%] border-x-[1px] border-[#ffffff33]'>
         <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} query={query} setFullScreen={setFullScreen} fullScreen={fullScreen} />
         <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />
-        <ShowOutput isOutputLoad={isOutputLoad} setOutputLoad={setOutputLoad} outputData={outputData} setOutputData={setOutputData} handleSubmit={handleSubmit} setShowOutputTerminal={setShowOutputTerminal} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />
+        <ShowOutput hideTableSideBar={hideTableSideBar} hideSideBar={hideSideBar} isOutputLoad={isOutputLoad} setOutputLoad={setOutputLoad} outputData={outputData} setOutputData={setOutputData} handleSubmit={handleSubmit} setShowOutputTerminal={setShowOutputTerminal} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />
       </div>
-      <ShowTableInfo setQuery={setQuery} fullScreen={fullScreen} />
+      <ShowTableInfo hideTableSideBar={hideTableSideBar} setHideTableSideBar={setHideTableSideBar} setQuery={setQuery} fullScreen={fullScreen} />
     </div>
   )
 }

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-function ShowOutput({ isOutputLoad, setOutputLoad, outputData, setOutputData, handleSubmit, setShowOutputTerminal, showOutputTerminal, fullScreen }) {
+function ShowOutput({ hideTableSideBar, hideSideBar, isOutputLoad, outputData, setShowOutputTerminal, showOutputTerminal, fullScreen }) {
   useEffect(() => {
     setShowOutputTerminal(!fullScreen);
   }, [fullScreen])
   return (
     <div>
       <div className='px-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between cursor-pointer' onClick={() => setShowOutputTerminal(!showOutputTerminal)}><span className=''>Output </span>{outputData && <span className='text-sm text-[gray]'>1000 rows in (0.03)s</span>}</div>
-      <div className='h-[230px] max-w-[1020px] overflow-scroll'>
+      <div className={`h-[230px] ${hideTableSideBar && hideSideBar ? 'max-w-[1400px]' : (hideSideBar || hideTableSideBar) ? 'max-w-[1160px]' :'max-w-[1000px]'}`}>
         <div className="relative overflow-x-auto">
           {
             isOutputLoad &&
