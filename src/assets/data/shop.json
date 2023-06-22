@@ -1,0 +1,602 @@
+[
+  {
+    "product_name": "nulla mollis molestie",
+    "price": 922.45,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "in felis eu",
+    "price": 199.28,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "eu tincidunt in",
+    "price": 597.93,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "nec dui luctus",
+    "price": 856.82,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "in est risus",
+    "price": 831.02,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "nonummy maecenas tincidunt",
+    "price": 558.04,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "ornare imperdiet sapien urna",
+    "price": 610.84,
+    "category": "Home Goods",
+    "in_stock": true
+  },
+  {
+    "product_name": "id ligula suspendisse",
+    "price": 86.99,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "ante nulla justo",
+    "price": 856.85,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "nulla eget eros elementum",
+    "price": 327.86,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "dui nec nisi",
+    "price": 9.3,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "fusce consequat nulla",
+    "price": 118.53,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "justo etiam pretium",
+    "price": 700.15,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "non velit donec",
+    "price": 310.73,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "orci luctus et ultrices",
+    "price": 405.59,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "semper rutrum nulla nunc",
+    "price": 580.02,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "orci eget orci",
+    "price": 638.28,
+    "category": "Toys",
+    "in_stock": false
+  },
+  {
+    "product_name": "justo sollicitudin ut",
+    "price": 851.43,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "metus arcu adipiscing",
+    "price": 845.06,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "vivamus metus arcu adipiscing",
+    "price": 471.9,
+    "category": "Home Goods",
+    "in_stock": true
+  },
+  {
+    "product_name": "etiam faucibus cursus",
+    "price": 906.9,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "pellentesque quisque porta volutpat",
+    "price": 67.9,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "pellentesque viverra pede ac",
+    "price": 892.58,
+    "category": "Toys",
+    "in_stock": false
+  },
+  {
+    "product_name": "pharetra magna ac",
+    "price": 409.41,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "id nulla ultrices",
+    "price": 508.08,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "sit amet consectetuer",
+    "price": 493.99,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "pellentesque viverra pede ac",
+    "price": 481.88,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "sapien urna pretium nisl",
+    "price": 895.32,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "felis sed interdum venenatis",
+    "price": 54.86,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "non mi integer",
+    "price": 338.47,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "laoreet ut rhoncus aliquet",
+    "price": 104.86,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "justo maecenas rhoncus aliquam",
+    "price": 403.15,
+    "category": "Toys",
+    "in_stock": false
+  },
+  {
+    "product_name": "sit amet nunc",
+    "price": 901.95,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "luctus et ultrices posuere",
+    "price": 11.66,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "lorem ipsum dolor",
+    "price": 703.52,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "sapien varius ut blandit",
+    "price": 228.69,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "aliquet at feugiat non",
+    "price": 119.72,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "eget tempus vel",
+    "price": 102.07,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "lorem id ligula suspendisse",
+    "price": 668.8,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "magna ac consequat",
+    "price": 550.22,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "est risus auctor sed",
+    "price": 299.81,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "eget semper rutrum nulla",
+    "price": 365.65,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "luctus et ultrices",
+    "price": 642.07,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "turpis eget elit",
+    "price": 398.44,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "lectus in quam fringilla",
+    "price": 32.3,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "venenatis lacinia aenean",
+    "price": 285.5,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "in sagittis dui",
+    "price": 99.54,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "pede libero quis orci",
+    "price": 241.7,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "ut blandit non",
+    "price": 428.27,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "in lacus curabitur at",
+    "price": 199.03,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "aliquet pulvinar sed",
+    "price": 969.35,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "tristique tortor eu pede",
+    "price": 636.78,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "pede justo eu massa",
+    "price": 169.04,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "vel lectus in quam",
+    "price": 438.33,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "consectetuer adipiscing elit",
+    "price": 74.97,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "ac diam cras",
+    "price": 46.09,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "vulputate justo in blandit",
+    "price": 874.71,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "tincidunt in leo",
+    "price": 984.74,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "ut suscipit a feugiat",
+    "price": 862.57,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "ut rhoncus aliquet",
+    "price": 585.82,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "morbi odio odio",
+    "price": 646.8,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "tempus semper est quam",
+    "price": 237.22,
+    "category": "Electronics",
+    "in_stock": true
+  },
+  {
+    "product_name": "et ultrices posuere cubilia",
+    "price": 252.65,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "id lobortis convallis",
+    "price": 843.57,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "pulvinar sed nisl",
+    "price": 573.36,
+    "category": "Toys",
+    "in_stock": false
+  },
+  {
+    "product_name": "penatibus et magnis dis",
+    "price": 395.65,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "potenti nullam porttitor",
+    "price": 748.34,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "turpis adipiscing lorem vitae",
+    "price": 271.04,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "vivamus metus arcu",
+    "price": 784.76,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "sed tincidunt eu",
+    "price": 934.89,
+    "category": "Home Goods",
+    "in_stock": true
+  },
+  {
+    "product_name": "in tempus sit amet",
+    "price": 36.64,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "turpis sed ante vivamus",
+    "price": 290.51,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "amet consectetuer adipiscing elit",
+    "price": 226.66,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "vitae nisi nam",
+    "price": 317.15,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "pellentesque quisque porta",
+    "price": 971.21,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "nulla elit ac nulla",
+    "price": 324.21,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "morbi non lectus aliquam",
+    "price": 991.69,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "sem fusce consequat nulla",
+    "price": 733.51,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "lorem id ligula suspendisse",
+    "price": 605.72,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "est et tempus",
+    "price": 979.32,
+    "category": "Home Goods",
+    "in_stock": true
+  },
+  {
+    "product_name": "pretium iaculis justo in",
+    "price": 168.09,
+    "category": "Home Goods",
+    "in_stock": true
+  },
+  {
+    "product_name": "at feugiat non pretium",
+    "price": 310.26,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "platea dictumst aliquam",
+    "price": 132.61,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "vitae nisl aenean",
+    "price": 591.08,
+    "category": "Toys",
+    "in_stock": false
+  },
+  {
+    "product_name": "quis turpis eget",
+    "price": 709.82,
+    "category": "Home Goods",
+    "in_stock": false
+  },
+  {
+    "product_name": "justo maecenas rhoncus aliquam",
+    "price": 388.66,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "mi nulla ac enim",
+    "price": 100.91,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "elementum eu interdum",
+    "price": 507.32,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "amet eros suspendisse accumsan",
+    "price": 420.84,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "sed interdum venenatis",
+    "price": 978.41,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "et ultrices posuere",
+    "price": 702.74,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "vulputate vitae nisl",
+    "price": 671.28,
+    "category": "Clothing",
+    "in_stock": false
+  },
+  {
+    "product_name": "ut suscipit a feugiat",
+    "price": 923.77,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "non mi integer ac",
+    "price": 385.27,
+    "category": "Toys",
+    "in_stock": true
+  },
+  {
+    "product_name": "vestibulum ante ipsum",
+    "price": 813.29,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "nulla suscipit ligula in",
+    "price": 972.62,
+    "category": "Beauty",
+    "in_stock": false
+  },
+  {
+    "product_name": "eget eleifend luctus ultricies",
+    "price": 1.64,
+    "category": "Clothing",
+    "in_stock": true
+  },
+  {
+    "product_name": "metus vitae ipsum aliquam",
+    "price": 57.22,
+    "category": "Electronics",
+    "in_stock": false
+  },
+  {
+    "product_name": "odio justo sollicitudin ut",
+    "price": 992.58,
+    "category": "Beauty",
+    "in_stock": true
+  },
+  {
+    "product_name": "dis parturient montes nascetur",
+    "price": 408.63,
+    "category": "Beauty",
+    "in_stock": true
+  }
+]

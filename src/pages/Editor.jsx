@@ -10,14 +10,16 @@ function Editor() {
   const [outputData, setOutputData] = useState();
   const [query, setQuery] = useState('');
   const [showOutputTerminal, setShowOutputTerminal] = useState(false);
+  const [history, setHistory] = useState([])
 
   // query executer handler
   const handleSubmit = useCallback(async () => {
     setShowOutputTerminal(true)
     setOutputLoad(true);
-    const { default: data } = await import('../assets/data/data.json');
+    const { default: data } = await import('../assets/data/product.json');
     setOutputData(data);
     setOutputLoad(false);
+    setHistory([...history, query]);
   }, [query])
 
   // file importer handler
@@ -38,7 +40,7 @@ function Editor() {
   }
   return (
     <div className='flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
-      <SideBar />
+      <SideBar history={history} setQuery={setQuery} />
       <div className='w-[100%] border-x-[1px] border-[#ffffff33]'>
         <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} />
         <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} />
