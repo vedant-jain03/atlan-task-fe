@@ -24,7 +24,7 @@ function SideBar({ history, setHistory, hideSideBar, setHideSideBar, setQuery, f
     }
   }, [])
   return (
-    <div className={`pb-4 relative ${hideSideBar ? 'w-[10px] p-4' : 'flex-[0.20]'}`}>
+    <div className={`pb-4 relative ${hideSideBar ? 'w-[10px] p-4' : 'flex-[0.20]'} hidden md:block`}>
       <button className={`absolute p-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-[5px] border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-[25px] h-[25px] flex justify-center items-center z-20 right-[-12px] top-[12px] outline-none `}
         onClick={() => toggleBar()}
       >{hideSideBar ? '>' : '<'}</button>
