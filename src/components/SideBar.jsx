@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { memo, useCallback, useEffect } from 'react'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-function SideBar({ history, setHistory, hideSideBar, setHideSideBar, setQuery, fullScreen }) {
+const SideBar = memo(({ history, setHistory, hideSideBar, setHideSideBar, setQuery, fullScreen }) => {
   const toggleBar = () => {
     setHideSideBar(!hideSideBar)
   }
@@ -32,6 +32,9 @@ function SideBar({ history, setHistory, hideSideBar, setHideSideBar, setQuery, f
         <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'><span className=''>History</span><DeleteOutlineIcon className='mr-4 cursor-pointer' onClick={()=>clearHistory()} /> </div>
         <div className='overflow-y-scroll h-[90vh]'>
           {
+            !history && <div className='flex items-center justify-center mt-5'><span className='text-center text-slate-400	'>No History</span></div>
+          }
+          {
             history && history.map((item) => (
             <div class="bg-[#343541] clamp-1 m-2 p-2 rounded-[5px] overflow-hidden text-sm cursor-pointer flex items-center" onClick={() => setQuery(item)}>
               <p class="line-clamp-1 text-sm">
@@ -43,6 +46,6 @@ function SideBar({ history, setHistory, hideSideBar, setHideSideBar, setQuery, f
       </div>
     </div>
   )
-}
+})
 
 export default SideBar

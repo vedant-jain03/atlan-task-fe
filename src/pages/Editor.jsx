@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ShowEditor from '../components/ShowEditor'
 import ShowOutput from '../components/ShowOutput'
 import ShowTableInfo from '../components/ShowTableInfo'
@@ -12,7 +12,7 @@ function Editor() {
   const [showOutputTerminal, setShowOutputTerminal] = useState(false);
   const [history, setHistory] = useState([])
   const [fullScreen, setFullScreen] = useState(false);
-  const [hideSideBar, setHideSideBar] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(true);
   const [hideTableSideBar, setHideTableSideBar] = useState(false);
 
   // query executer handler
@@ -49,6 +49,11 @@ function Editor() {
 
       reader.readAsText(file);
     }
+  }, [])
+
+  useEffect(() => {
+    setShowOutputTerminal(false);
+    setHideSideBar(true);
   }, [])
 
   return (

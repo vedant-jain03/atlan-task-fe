@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect } from 'react'
 import TableChartIcon from '@mui/icons-material/TableChart';
 import customerData from '../assets/data/customer.json'
 import productData from '../assets/data/product.json'
 import supplierData from '../assets/data/supplier.json'
 
-function ShowTableInfo({ hideTableSideBar, setHideTableSideBar ,setQuery, fullScreen }) {
+const ShowTableInfo = memo(({ hideTableSideBar, setHideTableSideBar ,setQuery, fullScreen }) => {
 
   // hard coded
   const tableMeta = [
@@ -53,6 +53,6 @@ function ShowTableInfo({ hideTableSideBar, setHideTableSideBar ,setQuery, fullSc
       </div>
     </div>
   )
-}
+})
 
 export default ShowTableInfo

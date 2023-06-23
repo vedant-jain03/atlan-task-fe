@@ -3,7 +3,7 @@ import ReactCodeMirror from '@uiw/react-codemirror'
 import React from 'react'
 
 function ShowEditor({ setQuery, query, showOutputTerminal }) {
-  const onChange = React.useCallback((value, viewUpdate) => {
+  const onChange = React.useCallback((value) => {
     setQuery(value);
   }, []);
   return (
