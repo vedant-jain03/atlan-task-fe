@@ -27,7 +27,7 @@ const EditorNavbar = memo(({ tabs, setTabs, activeTab, setActiveTab, handleSubmi
 
   return (
     <div className='w-[100%] flex pr-5 items-center h-[50px] flex items-center justify-between relative'>
-      <div className='flex h-[100%] items-center'>
+      <div className='flex h-[100%] items-center overflow-x-scroll'>
         {
           tabs.map((item, index) => (
             <div className={`${activeTab === index ? 'bg-[#282c34]' : 'bg-[#0d1116] cursor-pointer' }  h-[100%] p-2 pl-4 flex items-center justify-center flex items-center justify-between w-[150px]`}>
