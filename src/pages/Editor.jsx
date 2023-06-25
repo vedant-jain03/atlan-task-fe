@@ -14,6 +14,8 @@ function Editor() {
   const [fullScreen, setFullScreen] = useState(false);
   const [hideSideBar, setHideSideBar] = useState(true);
   const [hideTableSideBar, setHideTableSideBar] = useState(false);
+  const [tabs, setTabs] = useState(['SELECT * FROM Customer;']);
+  const [activeTab, setActiveTab] = useState(0);
 
   // query executer handler
   const handleSubmit = useCallback(async () => {
@@ -58,13 +60,51 @@ function Editor() {
 
   return (
     <div className='block md:flex item-center justify-between h-[100vh] w-[100vw] overflow-hidden bg-[#0d1116] text-[white]'>
-      <SideBar history={history} setHistory={setHistory} hideSideBar={hideSideBar} setHideSideBar={setHideSideBar} setQuery={setQuery} fullScreen={fullScreen} />
+      <SideBar
+        history={history}
+        setHistory={setHistory}
+        hideSideBar={hideSideBar}
+        setHideSideBar={setHideSideBar}
+        setQuery={setQuery}
+        fullScreen={fullScreen} />
       <div className={`w-full border-x-[1px] border-[#ffffff33] ${(hideSideBar && hideTableSideBar) ? 'flex-[0.95]' : (hideSideBar || hideTableSideBar) ? 'flex-[0.8]' : 'flex-[0.60]'} overflow-x-scroll h-[100vh] overflow-y-hidden`}>
-        <EditorNavbar handleSubmit={handleSubmit} handleFileImport={handleFileImport} query={query} setFullScreen={setFullScreen} fullScreen={fullScreen} />
-        <ShowEditor setQuery={setQuery} query={query} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />
-        <ShowOutput hideTableSideBar={hideTableSideBar} hideSideBar={hideSideBar} isOutputLoad={isOutputLoad} setOutputLoad={setOutputLoad} outputData={outputData} setOutputData={setOutputData} handleSubmit={handleSubmit} setShowOutputTerminal={setShowOutputTerminal} showOutputTerminal={showOutputTerminal} fullScreen={fullScreen} />
+        <EditorNavbar
+          tabs={tabs} 
+          setTabs={setTabs}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          handleSubmit={handleSubmit}
+          handleFileImport={handleFileImport}
+          query={query}
+          setQuery={setQuery}
+          setFullScreen={setFullScreen}
+          fullScreen={fullScreen} />
+        <ShowEditor
+          tabs={tabs}
+          setTabs={setTabs}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          setQuery={setQuery}
+          query={query}
+          showOutputTerminal={showOutputTerminal}
+          fullScreen={fullScreen} />
+        <ShowOutput
+          hideTableSideBar={hideTableSideBar}
+          hideSideBar={hideSideBar}
+          isOutputLoad={isOutputLoad}
+          setOutputLoad={setOutputLoad}
+          outputData={outputData}
+          setOutputData={setOutputData}
+          handleSubmit={handleSubmit}
+          setShowOutputTerminal={setShowOutputTerminal}
+          showOutputTerminal={showOutputTerminal}
+          fullScreen={fullScreen} />
       </div>
-      <ShowTableInfo hideTableSideBar={hideTableSideBar} setHideTableSideBar={setHideTableSideBar} setQuery={setQuery} fullScreen={fullScreen} />
+      <ShowTableInfo
+        hideTableSideBar={hideTableSideBar}
+        setHideTableSideBar={setHideTableSideBar}
+        setQuery={setQuery}
+        fullScreen={fullScreen} />
     </div>
   )
 }

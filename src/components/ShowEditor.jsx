@@ -2,7 +2,7 @@ import { sql } from '@codemirror/lang-sql';
 import ReactCodeMirror from '@uiw/react-codemirror'
 import React from 'react'
 
-function ShowEditor({ setQuery, query, showOutputTerminal }) {
+function ShowEditor({ tabs, setTabs, activeTab, setActiveTab, setQuery, query, showOutputTerminal }) {
   const onChange = React.useCallback((value) => {
     setQuery(value);
   }, []);
