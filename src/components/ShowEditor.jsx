@@ -1,8 +1,8 @@
 import { sql } from '@codemirror/lang-sql';
 import ReactCodeMirror from '@uiw/react-codemirror'
-import React from 'react'
+import React, { memo } from 'react'
 
-function ShowEditor({ tabs, setTabs, activeTab, setActiveTab, setQuery, query, showOutputTerminal }) {
+function ShowEditor({ setQuery, query, showOutputTerminal }) {
   const onChange = React.useCallback((value) => {
     setQuery(value);
   }, []);
@@ -20,4 +20,4 @@ function ShowEditor({ tabs, setTabs, activeTab, setActiveTab, setQuery, query, s
   )
 }
 
-export default ShowEditor
+export default memo(ShowEditor);

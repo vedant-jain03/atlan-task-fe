@@ -6,7 +6,10 @@ const ShowOutput = memo(({ hideTableSideBar, hideSideBar, isOutputLoad, outputDa
   }, [fullScreen])
   return (
     <div>
-      <div className='px-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between cursor-pointer' onClick={() => setShowOutputTerminal(!showOutputTerminal)}><span className=''>Output </span>{outputData && <span className='text-sm text-[gray]'>1000 rows in (0.03)s</span>}</div>
+      <div className='px-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between cursor-pointer' onClick={() => setShowOutputTerminal(!showOutputTerminal)}>
+        <span>Output </span>
+        {outputData && <span className='text-sm text-[gray]'>1000 rows in (0.03)s</span>}
+      </div>
       <div className={`h-[100vh] overflow-scroll`}>
         {
           isOutputLoad &&

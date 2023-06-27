@@ -1,26 +1,29 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useEffect, useMemo } from 'react'
 import TableChartIcon from '@mui/icons-material/TableChart';
 import customerData from '../assets/data/customer.json'
 import productData from '../assets/data/product.json'
 import supplierData from '../assets/data/supplier.json'
 
-const ShowTableInfo = memo(({ hideTableSideBar, setHideTableSideBar ,setQuery, fullScreen }) => {
+const ShowTableInfo = memo(({ hideTableSideBar, setHideTableSideBar, setQuery, fullScreen }) => {
 
   // hard coded
-  const tableMeta = [
-    {
-      name: "Customer",
-      fields: Object.keys(customerData[0])
-    },
-    {
-      name: "Product",
-      fields: Object.keys(productData[0])
-    },
-    {
-      name: "Supplier",
-      fields: Object.keys(supplierData[0])
-    }
-  ]
+  const tableMeta = useMemo(() => {
+    console.log('Hello')
+    return [
+      {
+        name: "Customer",
+        fields: Object.keys(customerData[0])
+      },
+      {
+        name: "Product",
+        fields: Object.keys(productData[0])
+      },
+      {
+        name: "Supplier",
+        fields: Object.keys(supplierData[0])
+      }
+    ]
+  }, [])
   const toggleBar = () => {
     setHideTableSideBar(!hideTableSideBar)
   }
@@ -33,16 +36,23 @@ const ShowTableInfo = memo(({ hideTableSideBar, setHideTableSideBar ,setQuery, f
         onClick={() => toggleBar()}
       >{hideTableSideBar ? '<' : '>'}</button>
       <div className={`${hideTableSideBar ? 'hidden' : 'block'}`}>
-        <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'><span className=''>Available Tables</span></div>
+        <div className='pl-5 border-b-[1px] border-[#ffffff33] h-[50px] flex items-center justify-between'>
+          <span className=''>Available Tables</span>
+        </div>
         <div className='p-4'>
           {
             tableMeta.map((item) => {
               return (
                 <div className='mb-4'>
-                  <span className='flex items-center cursor-pointer' onClick={()=>setQuery(`SELECT * FROM ${item.name};`)}><TableChartIcon className='pr-1' /> {item.name} [-]</span>
+                  <span className='flex items-center cursor-pointer' onClick={() => setQuery(`SELECT * FROM ${item.name};`)}><TableChartIcon className='pr-1' /> {item.name} [-]</span>
                   <ul>
                     {
-                      item.fields?.map((fieldItem) => (<li className='text-sm cursor-pointer'> <span className=' border-[#ffffff9c] border-b border-l h-4 w-2 inline-block ml-4 relative top-[-3px]'></span> <span onClick={() => setQuery(`SELECT ${fieldItem} FROM ${item.name};`)}>{fieldItem}</span> <span className='text-[#2463eb]'>[{typeof(fieldItem)}]</span></li>))
+                      item.fields?.map((fieldItem) => (
+                        <li className='text-sm cursor-pointer'>
+                          <span className=' border-[#ffffff9c] border-b border-l h-4 w-2 inline-block ml-4 relative top-[-3px]'></span>
+                          <span onClick={() => setQuery(`SELECT ${fieldItem} FROM ${item.name};`)}>{fieldItem}</span>
+                          <span className='text-[#2463eb]'>[{typeof (fieldItem)}]</span>
+                        </li>))
                     }
                   </ul>
                 </div>

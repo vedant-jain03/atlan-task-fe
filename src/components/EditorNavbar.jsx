@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from 'react'
+import React, { memo } from 'react'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import SettingsOverscanIcon from '@mui/icons-material/SettingsOverscan';
@@ -21,7 +21,7 @@ const EditorNavbar = memo(({ tabs, setTabs, activeTab, setActiveTab, handleSubmi
 
   const handleRemoveTab = (index) => {
     const newTabsArray = tabs.filter((item, i) => i !== index)
-    handleActiveTab(newTabsArray.length -1);
+    handleActiveTab(newTabsArray.length - 1);
     setTabs(newTabsArray);
   }
 
@@ -30,9 +30,13 @@ const EditorNavbar = memo(({ tabs, setTabs, activeTab, setActiveTab, handleSubmi
       <div className='flex h-[100%] items-center overflow-x-scroll'>
         {
           tabs.map((item, index) => (
-            <div className={`${activeTab === index ? 'bg-[#282c34]' : 'bg-[#0d1116] cursor-pointer' }  h-[100%] p-2 pl-4 flex items-center justify-center flex items-center justify-between w-[150px]`}>
-              <div className='hover:underline w-[100px]' onClick={() => handleActiveTab(index)}><span>Console {index}</span></div>
-              {index !==0 && <div className='bg-[#0d1116] bg-opacity-25 hover:bg-opacity-90 w-[25px] flex items-center justify-center rounded-[5px] cursor-pointer' onClick={() => handleRemoveTab(index)}><span>x</span></div>}
+            <div className={`${activeTab === index ? 'bg-[#282c34]' : 'bg-[#0d1116] cursor-pointer'}  h-[100%] p-2 pl-4 flex items-center justify-center flex items-center justify-between w-[150px]`} onClick={() => handleActiveTab(index)}>
+              <div className='hover:underline w-[100px]'><span>Console {index}</span></div>
+              {index !== 0 && <div className='bg-[#0d1116] bg-opacity-25 hover:bg-opacity-90 w-[25px] flex items-center justify-center rounded-[5px] cursor-pointer' onClick={(e) => {
+                e.stopPropagation()
+                handleRemoveTab(index)
+              }
+              }><span>x</span></div>}
             </div>
           ))
         }

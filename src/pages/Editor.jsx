@@ -43,7 +43,6 @@ function Editor() {
 
     if (file) {
       const reader = new FileReader();
-
       reader.onload = (event) => {
         const content = event.target.result;
         setQuery(content);
@@ -80,10 +79,6 @@ function Editor() {
           setFullScreen={setFullScreen}
           fullScreen={fullScreen} />
         <ShowEditor
-          tabs={tabs}
-          setTabs={setTabs}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
           setQuery={setQuery}
           query={query}
           showOutputTerminal={showOutputTerminal}
